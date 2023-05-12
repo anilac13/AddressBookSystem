@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+
 namespace AddressBookSystem
 {
     class Program
@@ -6,8 +8,32 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
             AddressBookMain main = new AddressBookMain();
-            main.AddContact();
-            main.Display();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\nChoose option to perform \n1.Create contacts in address book \n2.Add contact \n3.Edit contact \n4.Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        main.Display();
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter first name");
+                        main.AddContact();
+                        main.Display();
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter first name to edit");
+                        string name = Console.ReadLine();
+                        main.EditContact(name);
+                        main.Display();
+                        break;
+                    case 4:
+                        flag = false;
+                        break;
+                }
+            }
         }
     }
 }

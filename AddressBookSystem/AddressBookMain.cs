@@ -38,7 +38,6 @@ namespace AddressBookSystem
         }
         public void AddContact()
         {
-            Console.WriteLine("Enter fields to add contact");
             Contacts contact = new Contacts()
             {
                 firstName = Console.ReadLine(),
@@ -59,6 +58,41 @@ namespace AddressBookSystem
                 Console.WriteLine("First name: " + data.firstName + "\n" + "Last name: " + data.lastName + "\n" +
                       "Address: " + data.address + "\n" + "City: " + data.city + "\n" + "State: " + data.state + "\n" +
                     "ZIP: " + data.zipcode + "\n" + "Phone number: " + data.phoneNumber + "\n" + "E-Mail: " + data.email);
+            }
+        }
+        public void EditContact(string name)
+        {
+            foreach (var data in addressList)
+            {
+                if (data.firstName.ToLower().Equals(name.ToLower()))
+                {
+                    Console.WriteLine("\nChoose option to edit contact \n1.Last name \n2.Address \n3.City \n4.State \n5.ZIP \n6.Phone number \n7.E-Mail");
+                    int option = Convert.ToInt32(Console.ReadLine());
+                    switch (option)
+                    {
+                        case 1:
+                            data.lastName = Console.ReadLine();
+                            break;
+                        case 2:
+                            data.address = Console.ReadLine();
+                            break;
+                        case 3:
+                            data.city = Console.ReadLine();
+                            break;
+                        case 4:
+                            data.state = Console.ReadLine();
+                            break;
+                        case 5:
+                            data.zipcode = Console.ReadLine();
+                            break;
+                        case 6:
+                            data.phoneNumber = Console.ReadLine();
+                            break;
+                        case 7:
+                            data.email = Console.ReadLine();
+                            break;
+                    }
+                }
             }
         }
     }
