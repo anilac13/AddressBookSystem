@@ -38,6 +38,7 @@ namespace AddressBookSystem
         }
         public void AddContact()
         {
+            Console.WriteLine("Enter fields to add contact");
             Contacts contact = new Contacts()
             {
                 firstName = Console.ReadLine(),
