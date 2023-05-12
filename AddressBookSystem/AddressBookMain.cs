@@ -95,5 +95,20 @@ namespace AddressBookSystem
                 }
             }
         }
+        public void DeleteContact(string name)
+        {
+            Contacts contact = new Contacts();
+            foreach (var data in addressList)
+            {
+                if (data.firstName.ToLower() == name.ToLower())
+                {
+                    contact = data;
+                }
+            }
+            if (contact == null)
+                Console.WriteLine("No contact exists with respect to first name");
+            else
+                addressList.Remove(contact);
+        }
     }
 }
