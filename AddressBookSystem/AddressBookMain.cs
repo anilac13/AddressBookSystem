@@ -66,7 +66,7 @@ namespace AddressBookSystem
             {
                 if (data.firstName.ToLower().Equals(name.ToLower()))
                 {
-                    Console.WriteLine("\nChoose option to edit contact \n1.Last name \n2.Address \n3.City \n4.State \n5.ZIP \n6.Phone number \n7.E-Mail");
+                    Console.WriteLine("Choose option to edit contact \n1.Last name \n2.Address \n3.City \n4.State \n5.ZIP \n6.Phone number \n7.E-Mail");
                     int option = Convert.ToInt32(Console.ReadLine());
                     switch (option)
                     {
